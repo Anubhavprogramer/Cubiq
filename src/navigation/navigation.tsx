@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LandingScreen from '../ui/screens/LandingScreen';
 import { GameScreen } from '../ui/screens/GameScreen';
+import ProfileScreen from '../ui/screens/ProfileScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -17,6 +18,7 @@ const RootNavigator = () => {
         }}>
         <Stack.Screen name="Landing" component={LandingScreen} />
         <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
