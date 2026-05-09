@@ -1,16 +1,13 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PrimaryButton from '../components/PrimaryButton';
-import { Dimensions, StatusBar, Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { colors } from '../../utils/colors';
 import { BorderRadius, Margin, Padding, Spacing } from '../../utils/spacing';
 import ThemedText from '../components/ThemedComponents/ThemedText';
 import { fontSizes } from '../../constants/FontSize';
 import ImageViewer from '../components/ThemedComponents/ImageViewer';
 
-const {width} = Dimensions.get('window');
 
-const GRID_SIZE = width * 0.75;
-const CELL_SIZE = GRID_SIZE / 4;
 
 const LandingScreen = ({navigation}: any) => {
  
@@ -93,35 +90,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: colors.text,
   },
-  previewContainer: {
-    alignItems: 'center',
-    marginBottom: Margin.xlarge,
-  },
-  grid: {
-    width: GRID_SIZE,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-  },
-  cell: {
-    width: CELL_SIZE,
-    height: CELL_SIZE,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: colors.secondary,
-  },
-  cellText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
   bottomSection: {
     alignItems: 'center',
     marginBottom: Margin.xlarge,
-  },
-  footerText: {
-    fontSize: 12,
-    color: colors.text,
-    textAlign: 'center',
   },
 });
 

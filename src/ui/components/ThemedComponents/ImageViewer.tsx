@@ -1,5 +1,4 @@
 import { Image, StyleSheet, View, ImageSourcePropType } from "react-native";
-import { colors } from "../../../utils/colors";
 
 const ImageViewer: React.FC<{ source: ImageSourcePropType }> = ({ source }) => {
     return (
