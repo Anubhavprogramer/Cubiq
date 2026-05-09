@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { colors } from '../../utils/colors';
 import { BorderRadius, Padding } from '../../utils/spacing';
+import { fontSizes } from '../../constants/FontSize';
 
 interface Props {
   title: string;
@@ -25,15 +26,16 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.secondary,
     paddingVertical: Padding.medium,
-    borderRadius: BorderRadius.medium,
+    paddingHorizontal: Padding.large,
+    borderRadius: BorderRadius.xlarge,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
     color: colors.whiteText,
-    fontSize: 16,
+    fontFamily: 'Jersey25-Regular',
+    fontSize: fontSizes.xxlargePlus,
     fontWeight: '700',
-    letterSpacing: 0.5,
   },
 });
 

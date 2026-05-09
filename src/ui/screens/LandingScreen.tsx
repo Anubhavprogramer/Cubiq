@@ -2,7 +2,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import PrimaryButton from '../components/PrimaryButton';
 import { Dimensions, StatusBar, Text, View, StyleSheet } from 'react-native';
 import { colors } from '../../utils/colors';
-import { Margin, Padding } from '../../utils/spacing';
+import { BorderRadius, Margin, Padding, Spacing } from '../../utils/spacing';
+import ThemedText from '../components/ThemedComponents/ThemedText';
+import { fontSizes } from '../../constants/FontSize';
 
 const {width} = Dimensions.get('window');
 
@@ -18,16 +20,14 @@ const LandingScreen = ({navigation}: any) => {
       <View style={styles.topSection}>
         <View style={styles.badgeContainer}>
           <View style={styles.badge} />
-          <Text style={styles.logo}>Cubiq</Text>
+          <ThemedText style={styles.logo}>Cubiq</ThemedText>
+        </View>
         </View>
 
-        <Text style={styles.title}>
-          Train Your Brain{`\n`}One Patch At A Time
-        </Text>
-
-        <Text style={styles.subtitle}>
-          Solve infinite procedural puzzles by creating perfect number patches.
-        </Text>
+      <View style={styles.middleSection}>
+        <ThemedText style={styles.title}>
+          CUBIQ
+        </ThemedText>
       </View>
 
       <View style={styles.previewContainer}>
@@ -39,10 +39,6 @@ const LandingScreen = ({navigation}: any) => {
           title="Start Playing"
           onPress={() => navigation.navigate('Game')}
         />
-
-        <Text style={styles.footerText}>
-          Endless Levels • Relaxing Gameplay • Smart Puzzles
-        </Text>
       </View>
     </SafeAreaView>
   );
@@ -56,7 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   topSection: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginBottom: Margin.xlarge,
   },
   badgeContainer: {
@@ -65,9 +61,9 @@ const styles = StyleSheet.create({
     marginBottom: Margin.xlarge,
   },
   badge: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
+    width: Spacing.small,
+    height: Spacing.small,
+    borderRadius: BorderRadius.small,
     backgroundColor: colors.primary,
     marginRight: Margin.xsmall,
   },
@@ -76,8 +72,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.primary,
   },
+  middleSection: {
+    alignItems: 'center',
+    marginBottom: Margin.xlarge,
+  },
   title: {
-    fontSize: 32,
+    fontSize: fontSizes.landingFont,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: Margin.small,
