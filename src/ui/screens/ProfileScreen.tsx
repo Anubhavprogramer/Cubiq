@@ -1,6 +1,7 @@
 import { StyleSheet, View } from "react-native"
 import ThemedText from "../components/ThemedComponents/ThemedText"
 import BackHeader from "../components/BackHearder"
+import { colors } from "../../utils/colors"
 
 
 
@@ -18,6 +19,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: colors.background,
     },
     title: {
         fontSize: 24,
