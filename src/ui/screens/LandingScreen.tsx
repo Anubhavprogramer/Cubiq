@@ -5,6 +5,7 @@ import { colors } from '../../utils/colors';
 import { BorderRadius, Margin, Padding, Spacing } from '../../utils/spacing';
 import ThemedText from '../components/ThemedComponents/ThemedText';
 import { fontSizes } from '../../constants/FontSize';
+import ImageViewer from '../components/ThemedComponents/ImageViewer';
 
 const {width} = Dimensions.get('window');
 
@@ -28,10 +29,9 @@ const LandingScreen = ({navigation}: any) => {
         <ThemedText style={styles.title}>
           CUBIQ
         </ThemedText>
-      </View>
-
-      <View style={styles.previewContainer}>
-        this is Grid preview
+        <View style={styles.LogoCard}>
+          <ImageViewer source={require('../../assets/images/Logo.png')} />
+        </View>
       </View>
 
       <View style={styles.bottomSection}>
@@ -76,11 +76,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: Margin.xlarge,
   },
+  LogoCard: {
+    width: 200,
+    height: 200,
+    borderRadius: BorderRadius.small,
+    overflow: 'hidden',
+  },
   title: {
     fontSize: fontSizes.landingFont,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: Margin.small,
+    marginBottom: Margin.xxlarge,
   },
   subtitle: {
     fontSize: 16,
