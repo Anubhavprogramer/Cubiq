@@ -1,16 +1,15 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PrimaryButton from '../components/PrimaryButton';
 import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../utils/colors';
 import { BorderRadius, Margin, Padding, Spacing } from '../../utils/spacing';
 import ThemedText from '../components/ThemedComponents/ThemedText';
 import { fontSizes } from '../../constants/FontSize';
 import ImageViewer from '../components/ThemedComponents/ImageViewer';
 
-
-
-const LandingScreen = ({navigation}: any) => {
- 
+const LandingScreen = () => {
+  const navigation = useNavigation<any>();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,7 +33,7 @@ const LandingScreen = ({navigation}: any) => {
       <View style={styles.bottomSection}>
         <PrimaryButton
           title="Start Playing"
-          onPress={() => navigation.navigate('Game')}
+          onPress={() => navigation.push('Game')}
         />
       </View>
     </SafeAreaView>
